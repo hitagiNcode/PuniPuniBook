@@ -117,7 +117,6 @@ a:focus {
 
 .header_section {
   background-color: $primary2;
-  padding: 15px 0;
 
 }
 
@@ -168,14 +167,14 @@ a:focus {
 }
 
 .custom_nav-container {
-  padding: 0;
+  
 
   .navbar-nav {
-    margin-left: auto;
+    
 
     .nav-item {
       .nav-link {
-        padding: 10px 25px;
+       
         color: $white;
         text-align: center;
       }
