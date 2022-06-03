@@ -96,6 +96,7 @@ a:focus {
 
 .header_section {
   background-color: #063547;
+  padding: 3px;
 }
 
 .top_nav_container {
@@ -111,10 +112,11 @@ a:focus {
 }
 
 .search_form {
+  min-width: 350px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 0;
+  margin-left: 10px;
   position: relative;
 }
 
@@ -160,7 +162,6 @@ a:focus {
 }
 
 .custom_nav-container .navbar-nav .nav-item .nav-link {
-  padding: 10px 25px;
   color: #ffffff;
   text-align: center;
 }
