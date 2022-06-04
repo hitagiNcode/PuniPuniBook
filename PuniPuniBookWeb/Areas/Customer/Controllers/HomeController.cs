@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace PuniPuniBookWeb.Controllers;
 [Area("Customer")]
@@ -26,7 +27,7 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        IEnumerable<Product> productList = _unitOfWork.Product.GetAll(includeProperties:"Category,CoverType");
+        IEnumerable<Product> productList = _unitOfWork.Product.GetAll(includeProperties: "Category,CoverType");
 
         return View(productList);
     }
@@ -35,8 +36,8 @@ public class HomeController : Controller
     {
         ShoppingCart cartObj = new()
         {
-            Count=1,
-            ProductId=productId,
+            Count = 1,
+            ProductId = productId,
             Product = _unitOfWork.Product.GetFirstOrDefault(u => u.Id == productId, includeProperties: "Category,CoverType"),
         };
 
@@ -54,9 +55,10 @@ public class HomeController : Controller
 
         ShoppingCart cartFromDb = _unitOfWork.ShoppingCart.GetFirstOrDefault(
             u => u.ApplicationUserId == claim.Value && u.ProductId == shoppingCart.ProductId);
-            
 
-        if (cartFromDb == null) {
+
+        if (cartFromDb == null)
+        {
 
             _unitOfWork.ShoppingCart.Add(shoppingCart);
             _unitOfWork.Save();
@@ -68,7 +70,7 @@ public class HomeController : Controller
             _unitOfWork.ShoppingCart.IncrementCount(cartFromDb, shoppingCart.Count);
             _unitOfWork.Save();
         }
-        
+
 
         return RedirectToAction(nameof(Index));
     }
