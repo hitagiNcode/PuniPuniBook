@@ -11,6 +11,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using System;
 
 namespace PuniPuniBookWeb.Controllers;
 [Area("Customer")]
@@ -42,6 +43,25 @@ public class HomeController : Controller
         };
 
         return View(cartObj);
+    }
+
+    public IActionResult Search()
+    {
+        return RedirectToAction("Index");
+
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public IActionResult Search(string searchString)
+    {
+        if (!String.IsNullOrEmpty(searchString))
+        {
+             var bookTitles = _unitOfWork.Product.GetAll(u => u.Title.Contains(searchString)).ToList();
+            return View(bookTitles);
+        }
+
+        return RedirectToAction("Index");
     }
 
     [HttpPost]

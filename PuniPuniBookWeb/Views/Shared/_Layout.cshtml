@@ -48,17 +48,24 @@
                                         <i class="fa fa-search" aria-hidden="true"></i>
                                     </button>
                                 </from>
-                                -->
-                                <from class="search_form">
-                                    <input type="text" class="form-control" id="searchBox" placeholder="Search here...">
-                                    <button id="btnSubmit" type="submit" value="Submit">
+                                
+                                <from asp-action="Search" class="search_form">
+                                    <input type="text" class="form-control" name="SearchString" id="searchBox" placeholder="Search here...">
+                                    <button id="btnSubmit" type="submit" value="Filter">
                                         <i class="fa fa-search" aria-hidden="true"></i>
                                     </button>
                                 </from>
+                                -->
+                                <form asp-controller="Home" asp-action="Search" class="search_form" method="post">
+                                    <input type="text" class="form-control" name="SearchString" id="searchBox" placeholder="Search here...">
+                                    <input class="btn btn-outline-light btn-sm" type="submit" value="Search" />
+                                </form>
+
                             </li>
                             <li class="nav-item">
 
                                 <a class="nav-link " asp-area="Customer" asp-controller="Home" asp-action="Index">Home</a>
+
                             </li>
                             @if (User.IsInRole(SD.Role_Admin))
                             {
@@ -75,13 +82,13 @@
                                     </div>
                                 </li>
                             }
-                            
-                                <li class="nav-item">
-                                    <a class=nav-link asp-area="Admin" asp-controller="Order" asp-action="Index">
-                                        Manage Orders
-                                    </a>
-                                </li>
-                            
+
+                            <li class="nav-item">
+                                <a class=nav-link asp-area="Admin" asp-controller="Order" asp-action="Index">
+                                    Manage Orders
+                                </a>
+                            </li>
+
                             <li class="nav-item">
                                 <a class=nav-link asp-area="Customer" asp-controller="Cart" asp-action="Index">
                                     @await Component.InvokeAsync("ShoppingCart")
