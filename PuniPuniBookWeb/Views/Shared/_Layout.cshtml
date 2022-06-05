@@ -56,7 +56,7 @@
                                     </button>
                                 </from>
                                 -->
-                                <form asp-controller="Home" asp-action="Search" class="search_form" method="post">
+                                <form asp-area="Customer" asp-controller="Search" asp-action="Index" class="search_form" method="get">
                                     <input type="text" class="form-control" name="SearchString" id="searchBox" placeholder="Search here...">
                                     <input class="btn btn-outline-light btn-sm" type="submit" value="Search" />
                                 </form>

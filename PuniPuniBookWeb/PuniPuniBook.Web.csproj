@@ -4,6 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <CopyRefAssembliesToPublishDirectory>false</CopyRefAssembliesToPublishDirectory>
+    <UserSecretsId>cd2714d9-f4a5-4ef3-a0f7-982312109294</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

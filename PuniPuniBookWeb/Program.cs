@@ -30,8 +30,8 @@ builder.Services.AddSingleton<IEmailSender, EmailSender>();
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 builder.Services.AddAuthentication().AddFacebook(options =>
 {
-    options.AppId = "533257571075733";
-    options.AppSecret = "cee28519a0b06e73c034c996885febbb";
+    options.AppId = builder.Configuration.GetSection("Facebook:AppId").Get<string>();
+    options.AppSecret = builder.Configuration.GetSection("Facebook:AppSecret").Get<string>();
 });
 builder.Services.ConfigureApplicationCookie(options =>
 {
@@ -86,4 +86,20 @@ void SeedDatabase()
         var dbInitializer = scope.ServiceProvider.GetRequiredService<IDbInitializer>();
         dbInitializer.Initialize();
     }
+}
+
+static string GetHerokuConnectionString(string conString)
+{
+    string connectionUrl = conString;
+    if (string.IsNullOrEmpty(conString))
+    {
+        string? dbURL = Environment.GetEnvironmentVariable("DATABASE_URL");
+        connectionUrl = dbURL??"Postgre dburl missing";
+    }
+    var databaseUri = new Uri(connectionUrl);
+
+    string db = databaseUri.LocalPath.TrimStart('/');
+    string[] userInfo = databaseUri.UserInfo.Split(':', StringSplitOptions.RemoveEmptyEntries);
+
+    return $"User ID={userInfo[0]};Password={userInfo[1]};Host={databaseUri.Host};Port={databaseUri.Port};Database={db};Pooling=true;SSL Mode=Require;Trust Server Certificate=True;";
 }
