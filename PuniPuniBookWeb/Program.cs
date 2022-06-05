@@ -22,7 +22,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlSer
     builder.Configuration.GetConnectionString("DefaultConnection")
     ));
 builder.Services.Configure<StripeSettings>(builder.Configuration.GetSection("Stripe"));
-builder.Services.AddIdentity<IdentityUser,IdentityRole>().AddDefaultTokenProviders()
+builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddDefaultTokenProviders()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IDbInitializer, DbInitializer>();
@@ -94,7 +94,7 @@ static string GetHerokuConnectionString(string conString)
     if (string.IsNullOrEmpty(conString))
     {
         string? dbURL = Environment.GetEnvironmentVariable("DATABASE_URL");
-        connectionUrl = dbURL??"Postgre dburl missing";
+        connectionUrl = dbURL ?? "Postgre dburl missing";
     }
     var databaseUri = new Uri(connectionUrl);
 
