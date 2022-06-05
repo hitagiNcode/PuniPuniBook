@@ -18,5 +18,6 @@ namespace PuniPuniBook.Data.Repository.IRepository
         IOrderHeaderRepository OrderHeader {  get; }
 
         void Save();
+        Task SaveAsync();
     }
 }

@@ -23,8 +23,10 @@ builder.Services.AddControllersWithViews();
     ));*/
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseNpgsql(
     GetHerokuConnectionString(builder.Configuration.GetConnectionString("DATABASE_URL"))
-
 ));
+
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+
 builder.Services.Configure<StripeSettings>(builder.Configuration.GetSection("Stripe"));
 builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddDefaultTokenProviders()
     .AddEntityFrameworkStores<ApplicationDbContext>();
