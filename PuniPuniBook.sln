@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.31612.314
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PuniPuniBook.Web", "PuniPuniBookWeb\PuniPuniBook.Web.csproj", "{12D29D96-5398-433F-9603-0E73E96A18C0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PuniPuniBook.Shared", "PuniPuniBook.Utility\PuniPuniBook.Shared.csproj", "{DB9DD6A8-458B-4094-AE4A-B11AF058D49D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PuniPuniBook.Shared", "PuniPuniBook.Shared\PuniPuniBook.Shared.csproj", "{DB9DD6A8-458B-4094-AE4A-B11AF058D49D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PuniPuniBook.Domain", "PuniPuniBook.Domain\PuniPuniBook.Domain.csproj", "{4AFA1C49-0E00-49DD-BE0C-51CBC8379391}"
 EndProject
