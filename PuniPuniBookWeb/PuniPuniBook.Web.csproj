@@ -27,7 +27,6 @@
     <ProjectReference Include="..\PuniPuniBook.Application\PuniPuniBook.Application.csproj" />
     <ProjectReference Include="..\PuniPuniBook.Data\PuniPuniBook.Data.csproj" />
     <ProjectReference Include="..\PuniPuniBook.Shared\PuniPuniBook.Shared.csproj" />
-    <ProjectReference Include="..\PuniPuniBook.Utility\PuniPuniBook.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>

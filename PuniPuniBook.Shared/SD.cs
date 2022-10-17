@@ -1,4 +1,4 @@
-﻿namespace PuniPuniBook.Application.Services
+﻿namespace PuniPuniBook.Shared
 {
     public static class SD
     {

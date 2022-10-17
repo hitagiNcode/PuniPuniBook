@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using PuniPuniBook.Domain;
-using PuniPuniBook.Application.Services;
+using PuniPuniBook.Shared;
 
 namespace PuniPuniBook.Data.DbInitializer
 {

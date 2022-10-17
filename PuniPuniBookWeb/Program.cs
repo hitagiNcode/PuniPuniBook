@@ -5,11 +5,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using PuniPuniBook.Application.Services;
+using PuniPuniBook.Shared;
 using PuniPuniBook.Data;
 using PuniPuniBook.Data.DbInitializer;
 using PuniPuniBook.Data.Repository;
 using PuniPuniBook.Data.Repository.IRepository;
+using PuniPuniBook.Application.Services;
 using Stripe;
 using System;
 

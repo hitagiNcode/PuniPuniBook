@@ -1,7 +1,7 @@
 ﻿using PuniPuniBook.Data;
 using PuniPuniBook.Data.Repository.IRepository;
 using PuniPuniBook.Domain;
-using PuniPuniBook.Application.Services;
+using PuniPuniBook.Shared;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;

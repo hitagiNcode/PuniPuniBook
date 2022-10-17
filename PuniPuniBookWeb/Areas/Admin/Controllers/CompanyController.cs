@@ -2,7 +2,7 @@
 using PuniPuniBook.Data.Repository.IRepository;
 using PuniPuniBook.Domain;
 using PuniPuniBook.Domain.ViewModels;
-using PuniPuniBook.Application.Services;
+using PuniPuniBook.Shared;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
