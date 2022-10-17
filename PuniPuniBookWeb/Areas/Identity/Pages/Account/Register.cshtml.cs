@@ -10,7 +10,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using PuniPuniBook.Data.Repository.IRepository;
 using PuniPuniBook.Domain;
-using PuniPuniBook.Utility;
+using PuniPuniBook.Application.Services;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;

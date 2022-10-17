@@ -20,7 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PuniPuniBook.Domain\PuniPuniBook.Domain.csproj" />
-    <ProjectReference Include="..\PuniPuniBook.Utility\PuniPuniBook.Utility.csproj" />
+    <ProjectReference Include="..\PuniPuniBook.Utility\PuniPuniBook.Shared.csproj" />
   </ItemGroup>
 
 </Project>

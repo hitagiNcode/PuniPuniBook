@@ -1,11 +1,6 @@
-﻿using PuniPuniBook.Data.Repository.IRepository;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Microsoft.EntityFrameworkCore;
+using PuniPuniBook.Data.Repository.IRepository;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PuniPuniBook.Data.Repository
 {
@@ -17,14 +12,13 @@ namespace PuniPuniBook.Data.Repository
         public Repository(ApplicationDbContext db)
         {
             _db= db;
-            //_db.ShoppingCarts.Include(u => u.Product).Include(u=>u.CoverType);
             this.dbSet= _db.Set<T>();
         }
         public void Add(T entity)
         {
             dbSet.Add(entity);
         }
-        //includeProp - "Category,CoverType"
+        
         public IEnumerable<T> GetAll(Expression<Func<T, bool>>? filter=null, string? includeProperties = null)
         {
             IQueryable<T> query = dbSet;
@@ -34,7 +28,7 @@ namespace PuniPuniBook.Data.Repository
             }
             if (includeProperties != null)
             {
-                foreach(var includeProp in includeProperties.Split(new char[] { ','}, StringSplitOptions.RemoveEmptyEntries))
+                foreach(var includeProp in includeProperties.Split(new [] { ','}, StringSplitOptions.RemoveEmptyEntries))
                 {
                     query = query.Include(includeProp);
                 }
@@ -51,7 +45,7 @@ namespace PuniPuniBook.Data.Repository
                 query = query.Where(filter);
                 if (includeProperties != null)
                 {
-                    foreach (var includeProp in includeProperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                    foreach (var includeProp in includeProperties.Split(new [] { ',' }, StringSplitOptions.RemoveEmptyEntries))
                     {
                         query = query.Include(includeProp);
                     }
@@ -65,7 +59,7 @@ namespace PuniPuniBook.Data.Repository
                 query = query.Where(filter);
                 if (includeProperties != null)
                 {
-                    foreach (var includeProp in includeProperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                    foreach (var includeProp in includeProperties.Split(new [] { ',' }, StringSplitOptions.RemoveEmptyEntries))
                     {
                         query = query.Include(includeProp);
                     }

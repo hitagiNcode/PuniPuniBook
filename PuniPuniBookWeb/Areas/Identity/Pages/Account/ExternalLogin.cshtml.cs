@@ -16,7 +16,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 using PuniPuniBook.Domain;
-using PuniPuniBook.Utility;
+using PuniPuniBook.Application.Services;
 
 namespace PuniPuniBookWeb.Areas.Identity.Pages.Account
 {

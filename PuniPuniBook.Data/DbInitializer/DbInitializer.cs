@@ -1,12 +1,7 @@
-﻿using PuniPuniBook.Domain;
-using PuniPuniBook.Utility;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using PuniPuniBook.Domain;
+using PuniPuniBook.Application.Services;
 
 namespace PuniPuniBook.Data.DbInitializer
 {
@@ -26,7 +21,6 @@ namespace PuniPuniBook.Data.DbInitializer
             _db = db;
         }
 
-
         public void Initialize()
         {
             //migrations if they are not applied
@@ -37,7 +31,7 @@ namespace PuniPuniBook.Data.DbInitializer
                     _db.Database.Migrate();
                 }
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
 
             }
@@ -69,7 +63,11 @@ namespace PuniPuniBook.Data.DbInitializer
                 _userManager.AddToRoleAsync(user, SD.Role_Admin).GetAwaiter().GetResult();
 
             }
-            return;
+        }
+
+        public void Dispose()
+        {
+            GC.SuppressFinalize(this);
         }
     }
 }

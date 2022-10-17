@@ -1,7 +1,7 @@
 ﻿using PuniPuniBook.Data.Repository.IRepository;
 using PuniPuniBook.Domain;
 using PuniPuniBook.Domain.ViewModels;
-using PuniPuniBook.Utility;
+using PuniPuniBook.Application.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Stripe;

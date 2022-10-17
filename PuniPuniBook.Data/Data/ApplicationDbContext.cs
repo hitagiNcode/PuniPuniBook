@@ -1,7 +1,6 @@
-﻿
-using PuniPuniBook.Domain;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using PuniPuniBook.Domain;
 
 namespace PuniPuniBook.Data;
 public class ApplicationDbContext :IdentityDbContext

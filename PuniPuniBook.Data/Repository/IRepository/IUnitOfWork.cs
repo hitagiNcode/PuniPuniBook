@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PuniPuniBook.Data.Repository.IRepository
+﻿namespace PuniPuniBook.Data.Repository.IRepository
 {
     public interface IUnitOfWork
     {
@@ -18,6 +12,5 @@ namespace PuniPuniBook.Data.Repository.IRepository
         IOrderHeaderRepository OrderHeader {  get; }
 
         void Save();
-        Task SaveAsync();
     }
 }

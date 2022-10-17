@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -24,8 +24,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PuniPuniBook.Application\PuniPuniBook.Application.csproj" />
     <ProjectReference Include="..\PuniPuniBook.Data\PuniPuniBook.Data.csproj" />
-    <ProjectReference Include="..\PuniPuniBook.Utility\PuniPuniBook.Utility.csproj" />
+    <ProjectReference Include="..\PuniPuniBook.Utility\PuniPuniBook.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>

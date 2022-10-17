@@ -1,9 +1,4 @@
 ﻿using PuniPuniBook.Data.Repository.IRepository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PuniPuniBook.Data.Repository
 {
@@ -37,11 +32,6 @@ namespace PuniPuniBook.Data.Repository
         public void Save()
         {
             _db.SaveChanges();
-        }
-
-        public async Task SaveAsync()
-        {
-            await _db.SaveChangesAsync();
         }
 
         public void Dispose()

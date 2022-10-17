@@ -1,10 +1,5 @@
 ﻿using PuniPuniBook.Data.Repository.IRepository;
 using PuniPuniBook.Domain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PuniPuniBook.Data.Repository
 {
@@ -16,7 +11,6 @@ namespace PuniPuniBook.Data.Repository
         {
             _db = db;
         }
-
 
         public void Update(CoverType obj)
         {
