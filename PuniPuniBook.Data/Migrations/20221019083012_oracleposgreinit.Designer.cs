@@ -12,8 +12,8 @@ using PuniPuniBook.Data;
 namespace PuniPuniBook.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220605195408_postgreinit")]
-    partial class postgreinit
+    [Migration("20221019083012_oracleposgreinit")]
+    partial class oracleposgreinit
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -235,7 +235,7 @@ namespace PuniPuniBook.Data.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("CreatedDateTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<int>("DisplayOrder")
                         .HasColumnType("integer");
@@ -352,7 +352,7 @@ namespace PuniPuniBook.Data.Migrations
                         .HasColumnType("text");
 
                     b.Property<DateTime>("OrderDate")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("OrderStatus")
                         .HasColumnType("text");
@@ -361,10 +361,10 @@ namespace PuniPuniBook.Data.Migrations
                         .HasColumnType("double precision");
 
                     b.Property<DateTime>("PaymentDate")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<DateTime>("PaymentDueDate")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("PaymentIntentId")
                         .HasColumnType("text");
@@ -384,7 +384,7 @@ namespace PuniPuniBook.Data.Migrations
                         .HasColumnType("text");
 
                     b.Property<DateTime>("ShippingDate")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("State")
                         .IsRequired()

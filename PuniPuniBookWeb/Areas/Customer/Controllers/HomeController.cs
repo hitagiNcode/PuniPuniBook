@@ -1,17 +1,14 @@
-﻿using PuniPuniBook.Data.Repository.IRepository;
-using PuniPuniBook.Domain;
-using PuniPuniBook.Domain.ViewModels;
-using PuniPuniBook.Shared;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using PuniPuniBook.Data.Repository.IRepository;
+using PuniPuniBook.Domain;
+using PuniPuniBook.Shared;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Security.Claims;
-using System.Threading.Tasks;
-using System;
 
 namespace PuniPuniBookWeb.Controllers;
 [Area("Customer")]

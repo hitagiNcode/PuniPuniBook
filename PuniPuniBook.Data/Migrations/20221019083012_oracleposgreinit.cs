@@ -6,7 +6,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace PuniPuniBook.Data.Migrations
 {
-    public partial class postgreinit : Migration
+    public partial class oracleposgreinit : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -32,7 +32,7 @@ namespace PuniPuniBook.Data.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Name = table.Column<string>(type: "text", nullable: false),
                     DisplayOrder = table.Column<int>(type: "integer", nullable: false),
-                    CreatedDateTime = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                    CreatedDateTime = table.Column<DateTime>(type: "timestamp without time zone", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -256,15 +256,15 @@ namespace PuniPuniBook.Data.Migrations
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     ApplicationUserId = table.Column<string>(type: "text", nullable: false),
-                    OrderDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    ShippingDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    OrderDate = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
+                    ShippingDate = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
                     OrderTotal = table.Column<double>(type: "double precision", nullable: false),
                     OrderStatus = table.Column<string>(type: "text", nullable: true),
                     PaymentStatus = table.Column<string>(type: "text", nullable: true),
                     TrackingNumber = table.Column<string>(type: "text", nullable: true),
                     Carrier = table.Column<string>(type: "text", nullable: true),
-                    PaymentDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    PaymentDueDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    PaymentDate = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
+                    PaymentDueDate = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
                     SessionId = table.Column<string>(type: "text", nullable: true),
                     PaymentIntentId = table.Column<string>(type: "text", nullable: true),
                     PhoneNumber = table.Column<string>(type: "text", nullable: false),
