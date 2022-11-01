@@ -69,10 +69,8 @@ public class HomeController : Controller
             _unitOfWork.Save();
         }
 
-
         return RedirectToAction(nameof(Index));
     }
-
 
     public IActionResult Privacy()
     {

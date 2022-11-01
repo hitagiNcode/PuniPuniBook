@@ -81,7 +81,7 @@ public class ProductController : Controller
             if (file != null)
             {
                 string fileName = Guid.NewGuid().ToString();
-                var uploads = Path.Combine(wwwRootPath, @"images\products");
+                var uploads = Path.Combine(wwwRootPath, "images","products");
                 var extension = Path.GetExtension(file.FileName);
 
                 if (obj.Product.ImageUrl != null)
@@ -97,7 +97,8 @@ public class ProductController : Controller
                 {
                     file.CopyTo(fileStreams);
                 }
-                obj.Product.ImageUrl = @"\images\products\" + fileName + extension;
+                var imagePath = Path.Combine("images", "products", fileName + extension);
+                obj.Product.ImageUrl = imagePath;
 
             }
             if (obj.Product.Id == 0)
