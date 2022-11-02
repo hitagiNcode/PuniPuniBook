@@ -20,20 +20,20 @@ namespace PuniPuniBook.Web.Areas.Customer.Controllers
 
         public IActionResult Index()
         {
-            
+
             return View();
         }
 
         [HttpGet]
         public IActionResult Index(string searchString)
         {
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                var bookTitles = _unitOfWork.Product.GetAll(u => u.Title.Contains(searchString)).ToList();
-                return View(bookTitles);
-            }
-
-            return RedirectToAction("Index");
+            if (string.IsNullOrEmpty(searchString)) return RedirectToAction("Index");
+            
+            searchString = searchString.ToUpper();
+            
+            var bookTitles = _unitOfWork.Product.GetAll(u =>
+                u.Title.ToUpper().Contains(searchString) || u.Author.ToUpper().Contains(searchString)).ToList();
+            return View(bookTitles);
         }
     }
 }

@@ -13,8 +13,12 @@ using PuniPuniBook.Data.Repository.IRepository;
 using PuniPuniBook.Application.Services;
 using Stripe;
 using System;
+using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Set default culture for Linux
+CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("en-US");
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

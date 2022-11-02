@@ -25,9 +25,11 @@ namespace PuniPuniBook.Web.Areas.Customer.Controllers
         {
             try
             {
-                string term = HttpContext.Request.Query["term"].ToString();
+                var term = HttpContext.Request.Query["term"].ToString().ToUpper();
                 
-                var bookTitles = _unitOfWork.Product.GetAll(u => u.Title.Contains(term)).Select(u => u.Title).ToList();
+                var bookTitles = _unitOfWork.Product
+                    .GetAll(u => u.Title.ToUpper().Contains(term) || u.Author.ToUpper().Contains(term))
+                    .Select(u => u.Title).ToList();
 
                 return Ok(bookTitles);
             }
