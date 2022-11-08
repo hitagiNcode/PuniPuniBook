@@ -131,8 +131,9 @@ namespace PuniPuniBookWeb.Areas.Customer.Controllers
 
             if (applicationUser.CompanyId.GetValueOrDefault() == 0)
             {
-                //stripe settings 
-                var domain = "https://localhost:44300/";
+                //stripe settings
+                //todo: move to config
+                var domain = "https://project2.barisgunenc.dev/";
                 var options = new SessionCreateOptions
                 {
                     PaymentMethodTypes = new List<string>
